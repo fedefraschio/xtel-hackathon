@@ -47,15 +47,18 @@ Model used:
 Hyperparameters optimized using GridSearchCV.
 
 Best parameters found:
-    - learning_rate: 0.03
-    - max_depth: 6
-    - n_estimators: 300
-    - subsample: 0.8
-    - colsample_bytree: 0.8
-    - reg_lambda: 5
+- colsample_bytree: 0.8 
+- learning_rate: 0.03, 
+- max_depth: 4,
+- min_child_weight: 5,
+- n_estimators: 500,
+- reg_alpha: 0,
+- reg_lambda: 1,
+- subsample: 0.8
+
 
 Validation MAPE:
-    0.0136
+    0.00997
 
 ---
 
@@ -76,20 +79,39 @@ The project structure allows future extension to:
 - Separate promotional uplift
 - Predict baseline (non-promotional) demand
 
+**Model for Baseline Sales prediction**
+
+Best parameters found:
+- colsample_bytree: 0.8 
+- learning_rate: 0.03, 
+- max_depth: 6,
+- min_child_weight: 1,
+- n_estimators: 300,
+- reg_alpha: 0,
+- reg_lambda: 5,
+- subsample: 0.8
+
+
+Validation MAPE:
+    0.0126
+
 ---
 
 ## 📁 Repository Structure
-
+<pre> 
+.
 ├── data/
-| ├── raw/
-│ | ├── weekly_train.csv
-│ | └── weekly_test.csv
-| └── processed/
-|  └── test_predictions.csv
+│   ├── raw/
+│   │   ├── weekly_train.csv
+│   │   └── weekly_test.csv
+│   └── processed/
+│       └── test_predictions.csv
 ├── notebooks/
-│ └── sales_forecasting.ipynb
+│   └── sales_forecasting.ipynb
 ├── requirements.txt
 └── README.md
+</pre>
+
 
 ## 🛠 Requirements
 
